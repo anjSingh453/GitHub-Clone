@@ -22,7 +22,7 @@ const Signup = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("https://github-clone-xa4z.onrender.com/signup", {
+      const res = await axios.post("https://github-clone-1-w9pl.onrender.com/signup", {
         email: email,
         password: password,
         username: username,
