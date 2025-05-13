@@ -1,0 +1,99 @@
+/* nav {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+
+nav img {
+  height: 50px;
+  border-radius: 100%;
+}
+nav div {
+  display: flex;
+}
+
+nav h3 {
+  margin-left: 15px;
+  color: white;
+}
+
+nav p {
+  margin-left: 50px;
+  font-weight: bold;
+  color: white;
+}
+
+nav h3:hover,
+nav p:hover {
+  text-decoration: underline;
+} */
+
+
+/* navbar.css */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #24292f;
+  color: #ffffff;
+  padding: 0 1rem;
+  height: 56px;
+  box-shadow: 0 1px 3px rgba(27,31,35,0.12);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-logo h3 {
+  margin: 0 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #c9d1d9;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.nav-item span {
+  font-size: 0.95rem;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.nav-item:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive: collapse items on very small screens */
+@media (max-width: 480px) {
+  .navbar-right span {
+    display: none;
+  }
+}
