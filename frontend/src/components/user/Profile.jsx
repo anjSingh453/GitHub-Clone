@@ -20,7 +20,7 @@ const Profile = () => {
       if (userId) {
         try {
           const response = await axios.get(
-            `https://github-clone-xa4z.onrender.com/userProfile/${userId}`
+            `https://github-clone-1-w9pl.onrender.com/userProfile/${userId}`
           );
           setUserDetails(response.data);
         } catch (err) {
