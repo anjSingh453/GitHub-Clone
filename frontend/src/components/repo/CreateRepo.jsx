@@ -215,7 +215,7 @@ const CreateRepository = () => {
     e.preventDefault();
     const userId = localStorage.getItem("userId");
     try {
-      const res = await fetch("https://github-clone-xa4z.onrender.com/repo/create", {
+      const res = await fetch("https://github-clone-1-w9pl.onrender.com/repo/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
