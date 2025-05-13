@@ -19,7 +19,7 @@ const Dashboard = () => {
 
     const fetchRepositories = async () => {
       try {
-        const response = await fetch(`https://github-clone-xa4z.onrender.com/repo/user/${userId}`);
+        const response = await fetch(`https://github-clone-1-w9pl.onrender.com/repo/user/${userId}`);
         const data = await response.json();
         setRepositories(data.repositories || []);
       } catch (err) {
@@ -29,7 +29,7 @@ const Dashboard = () => {
 
     const fetchSuggestedRepositories = async () => {
       try {
-        const response = await fetch(`https://github-clone-xa4z.onrender.com/repo/all`);
+        const response = await fetch(`https://github-clone-1-w9pl.onrender.com/repo/all`);
         const data = await response.json();
         setSuggestedRepositories(data);
       } catch (err) {
