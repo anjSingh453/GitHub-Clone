@@ -15,7 +15,7 @@ const IssueForm = ({ repositoryId }) => {
     const fetchIssues = async () => {
       try {
         const response = await axios.get(
-          `https://github-clone-xa4z.onrender.com/issue/all?repositoryId=${repositoryId}`
+          `https://github-clone-1-w9pl.onrender.com/issue/all?repositoryId=${repositoryId}`
         );
         setIssues(response.data);
         setLoading(false);
@@ -32,7 +32,7 @@ const IssueForm = ({ repositoryId }) => {
     e.preventDefault();
     const issueData = { title, description, repositoryId };
     try {
-      const response = await axios.post("https://github-clone-xa4z.onrender.com/issue/create", issueData);
+      const response = await axios.post("https://github-clone-1-w9pl.onrender.com/issue/create", issueData);
       if (response.status === 201) {
         setTitle("");
         setDescription("");
