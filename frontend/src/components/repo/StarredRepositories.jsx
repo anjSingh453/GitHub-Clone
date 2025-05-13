@@ -16,7 +16,7 @@ const StarredRepositories = () => {
     const fetchStarredRepos = async () => {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:3000/repo/starred");
+        const response = await fetch("https://github-clone-xa4z.onrender.com/repo/starred");
         const data = await response.json();
         setStarredRepos(data);
       } catch (error) {
