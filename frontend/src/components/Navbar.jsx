@@ -32,6 +32,7 @@
 // export default Navbar;
 
 
+
 import React from "react";
 import { Link } from "react-router-dom";
 import {
@@ -44,6 +45,15 @@ import {
 import "./navbar.css";
 
 const Navbar = () => {
+  const handleLogout = () => {
+    // Remove token and userId from localStorage
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+
+    // Redirect to login page
+    window.location.href = "/auth";
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -65,6 +75,14 @@ const Navbar = () => {
           <PersonIcon size={16} />
           <span>Profile</span>
         </Link>
+        
+        {/* Logout Button */}
+        <button
+          onClick={handleLogout}
+          className="logout-button"
+        >
+          Logout
+        </button>
       </div>
     </nav>
   );
