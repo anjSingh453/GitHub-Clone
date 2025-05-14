@@ -1,9 +1,8 @@
-/* dashboard.css */
-
+/* General Layout */
 #dashboard {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  gap: 1rem;
+  gap: 2rem;
   padding: 2rem;
   background-color: #f6f8fa;
   min-height: 100vh;
@@ -65,24 +64,7 @@ main h2 {
   background-color: #f6f8fa;
 }
 
-/* Repository box */
-main > div {
-  border: 1px solid #d8dee4;
-  border-radius: 6px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  transition: background-color 0.2s ease;
-}
-
-main > div:hover {
-  background-color: #f3f4f6;
-}
-
-main h4 {
-  margin: 0.25rem 0;
-  font-size: 14px;
-  color: #1f2328;
-}
+/* Repository card styling */
 .repo-card {
   border: 1px solid #d0d7de;
   border-radius: 6px;
@@ -113,13 +95,23 @@ main h4 {
   font-size: 13px;
   color: #57606a;
   margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
+.repo-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #57606a;
+}
 
-/* Responsive */
+.repo-stats span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 960px) {
   #dashboard {
     grid-template-columns: 1fr;
