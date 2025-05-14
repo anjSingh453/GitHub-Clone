@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   MarkGithubIcon,
   RepoIcon,
@@ -10,13 +10,12 @@ import {
 import "./navbar.css";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   const handleLogout = () => {
-    // Remove token and userId from localStorage
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
-
-    // Redirect to login page
-    window.location.href = "/auth";
+    navigate("/auth");  // ✅ client-side navigation
   };
 
   return (
@@ -41,11 +40,7 @@ const Navbar = () => {
           <span>Profile</span>
         </Link>
         
-        {/* Logout Button */}
-        <button
-          onClick={handleLogout}
-          className="logout-button"
-        >
+        <button onClick={handleLogout} className="logout-button">
           Logout
         </button>
       </div>
