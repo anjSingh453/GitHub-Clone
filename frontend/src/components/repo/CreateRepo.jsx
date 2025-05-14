@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, TextInput, Heading, Flash, FormControl, Text, Select, Checkbox } from "@primer/react";  // Primer UI imports
-import { FaBook, FaLock, FaGlobe, FaFileCode, FaShieldAlt, FaEye, FaCode, FaFileAlt, FaGitAlt, FaPen } from "react-icons/fa";
+import {
+  Box,
+  Button,
+  TextInput,
+  Heading,
+  Flash,
+  FormControl,
+  Text,
+  Select,
+  Checkbox,
+} from "@primer/react";
 
 const CreateRepository = () => {
   const [name, setName] = useState("");
@@ -38,7 +47,7 @@ const CreateRepository = () => {
     }
 
     try {
-      const response = await fetch("https://github-clone-1-w9pl.onrender.com/repo/create", {
+      const response = await fetch("http://localhost:3000/repo/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +60,7 @@ const CreateRepository = () => {
       if (response.ok) {
         setMessage("Repository created successfully!");
         setTimeout(() => {
-          navigate("/dashboard");
+          navigate("/");
         }, 1000);
       } else {
         setMessage(data.error || "Failed to create repository.");
@@ -73,18 +82,18 @@ const CreateRepository = () => {
       boxShadow="medium"
       backgroundColor="#ffffff"
       sx={{
-        '@media (max-width: 768px)': {
+        "@media (max-width: 768px)": {
           p: 3,
         },
       }}
     >
-      <Heading as="h2" mb={3} display="flex" alignItems="center">
-        <FaGitAlt size={24} style={{ marginRight: '8px' }} /> Create a new repository
+      <Heading as="h2" mb={3}>
+        Create a new repository
       </Heading>
 
       {message && (
         <Flash variant="success" mb={3}>
-          <FaPen /> {message}
+          {message}
         </Flash>
       )}
 
@@ -115,12 +124,8 @@ const CreateRepository = () => {
           onChange={(e) => setVisibility(e.target.value)}
           block
         >
-          <Select.Option value="public">
-            <FaEye /> Public
-          </Select.Option>
-          <Select.Option value="private">
-            <FaLock /> Private
-          </Select.Option>
+          <Select.Option value="public">Public</Select.Option>
+          <Select.Option value="private">Private</Select.Option>
         </Select>
       </FormControl>
 
@@ -132,13 +137,13 @@ const CreateRepository = () => {
             onChange={() => setIncludeReadme(!includeReadme)}
           />
           <FormControl.Label htmlFor="readme">
-            <FaBook size={16} /> Initialize this repository with a README
+            Initialize this repository with a README
           </FormControl.Label>
         </FormControl>
       </Box>
 
       <FormControl mt={4}>
-        <FormControl.Label><FaCode size={16} /> Add .gitignore (optional)</FormControl.Label>
+        <FormControl.Label>Add .gitignore (optional)</FormControl.Label>
         <Select
           value={gitignoreTemplate}
           onChange={(e) => setGitignoreTemplate(e.target.value)}
@@ -152,7 +157,7 @@ const CreateRepository = () => {
       </FormControl>
 
       <FormControl mt={4}>
-        <FormControl.Label><FaFileAlt size={16} /> Choose a license (optional)</FormControl.Label>
+        <FormControl.Label>Choose a license (optional)</FormControl.Label>
         <Select
           value={licenseTemplate}
           onChange={(e) => setLicenseTemplate(e.target.value)}
@@ -171,7 +176,7 @@ const CreateRepository = () => {
         onClick={handleCreateRepository}
         disabled={!name}
       >
-        <FaFileCode size={16} style={{ marginRight: '6px' }} /> Create repository
+        Create repository
       </Button>
     </Box>
   );
