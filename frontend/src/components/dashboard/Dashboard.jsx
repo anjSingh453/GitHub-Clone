@@ -161,7 +161,7 @@ const Dashboard = () => {
 
     const fetchRepositories = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/repo/user/${userId}`);
+        const response = await fetch(`https://github-clone-1-w9pl.onrender.com/repo/user/${userId}`);
         const data = await response.json();
         setRepositories(data.repositories || []);
         setSearchResults(data.repositories || []);
@@ -175,7 +175,7 @@ const Dashboard = () => {
 
     const fetchSuggestedRepositories = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/repo/all`);
+        const response = await fetch(`https://github-clone-1-w9pl.onrender.com/repo/all`);
         const data = await response.json();
         setSuggestedRepositories(data || []);
       } catch (err) {
