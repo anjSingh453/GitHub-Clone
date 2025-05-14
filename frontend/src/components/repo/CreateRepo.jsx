@@ -47,7 +47,7 @@ const CreateRepository = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/repo/create", {
+      const response = await fetch("https://github-clone-1-w9pl.onrender.com/repo/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
