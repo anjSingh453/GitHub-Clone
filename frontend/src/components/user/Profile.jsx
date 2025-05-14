@@ -66,7 +66,7 @@ const Profile = () => {
         </UnderlineNav.Item>
       </UnderlineNav>
 
-      <button
+{/*       <button
         onClick={() => {
           localStorage.removeItem("token");
           localStorage.removeItem("userId");
@@ -78,7 +78,7 @@ const Profile = () => {
         id="logout"
       >
         Logout
-      </button>
+      </button> */}
 
       <div className="profile-page-wrapper">
         <div className="user-profile-section">
